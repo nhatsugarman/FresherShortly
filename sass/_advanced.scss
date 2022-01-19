@@ -1,0 +1,104 @@
+.advanced {
+    padding: 80px 0 30px;
+    background: linear-gradient(180deg, #f8f8f8 -45.04%, rgba(248, 248, 248, 0) 88.56%);
+    .button {
+        width: 100%;
+    }
+    &-header {
+        max-width: 555px;
+        margin: 0 auto 60px;
+        text-align: center;
+        .heading {
+            font-weight: bold;
+            color: $txt-dark-blue;
+            margin-bottom: 30px;
+        }
+    }
+    &-title {
+        color: $txt-dark-blue;
+        text-align: left;
+    }
+
+    &-image {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background: $dark-violet;
+        @include flex(center, center);
+        top: 0;
+        transform: translateY(-50%);
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0 25px;
+        margin-bottom: 176px;
+    }
+    &-item {
+        border: 2px solid #dddddd;
+        background: #fff;
+        border-radius: 10px;
+        padding: 80px 25px 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+        position: relative;
+        height: 80%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 33px;
+            height: 10px;
+            background-color: $cyan;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -33px;
+        }
+    }
+    &-item:nth-child(2) {
+        margin-top: 80px;
+    }
+
+    &-item:nth-child(3) {
+        margin-top: 160px;
+        &::after {
+            width: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .advanced-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 70px 0;
+        margin-bottom: 50px;
+    }
+    .advanced-item {
+        height: 100%;
+        text-align: center;
+        .advanced-title {
+            text-align: center;
+        }
+        &::after {
+            height: 40px;
+            width: 10px;
+            top: 100%;
+            right: 50%;
+            transform: translateY(0);
+            transform: translateX(50%);            
+        }
+    }
+    .advanced-item:nth-child(2),
+    .advanced-item:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .advanced-image {
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+}

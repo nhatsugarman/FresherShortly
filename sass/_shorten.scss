@@ -1,0 +1,138 @@
+.shorten {
+    &-container {
+        position: relative;
+        background-image: url(../images/bg-shorten-desktop.svg);
+        background-color: $dark-violet;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        padding: 58px 70px;
+        @include flex(center, space-between);
+        gap: 0 20px;
+        box-shadow: 0 30px 114px 0 rgba(#0d1025, 0.06);
+    }
+    &-content {
+        flex: 1;
+        input {
+            width: 100%;
+            padding: 15px 65px;
+            font-size: 20px;
+            font-family: $font;
+            font-weight: 500;
+            border-radius: 10px;
+        }
+        &.active {
+            position: relative;
+            input {
+                border: 2px solid $red;
+            }
+            ::placeholder,
+            ::-webkit-input-placeholder {
+                color: $red;
+            }
+            &::after {
+                content: "Please add a link";
+                position: absolute;
+                width: 100%;
+                bottom: -50%;
+                left: 0px;
+                color: $red;
+                font-style: italic;
+            }
+        }
+    }
+    .shorten-list {
+        display: none;
+    }
+
+    &.active {
+        margin-bottom: 250px;
+        @include tablet {
+            margin-bottom: 660px;
+        }
+        .shorten-list {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 120%;
+            display: grid;
+            gap: 20px;
+        }
+        .shorten-item {
+            @include flex(center, space-between);
+            background-color: #fff;
+            border-radius: 5px;
+            gap: 20px;
+            width: 100%;
+            height: 100%;
+            padding: 0 40px;
+            box-shadow: 10px 0px 10px 0px $cyan;
+
+            @include tablet {
+                flex-direction: column;
+                gap: 0;
+                padding: 0 20px;
+            }
+
+            &__link {
+                color: $dark-violet;
+                padding: 28px 0;
+                @include tablet {
+                    padding: 20px 0;
+                    text-align: start;
+                    width: 100%;
+                }
+            }
+            &__rep {
+                color: $cyan;
+                padding: 28px 0;
+                width: 100%;
+                text-align: end;
+                @include tablet {
+                    text-align: start;
+                    border-top: 1px solid $gray;
+                }
+            }
+            &__copy {
+                color: #fff;
+                background-color: $cyan;
+                padding: 17px 48px;
+                border-radius: 5px;
+                text-align: center;
+                @include tablet {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                &:hover {
+                    opacity: 0.6;
+                    cursor: pointer;
+                }
+                &.copied {
+                    background-color: $txt-dark-violet;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .shorten {
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .shorten-container {
+        flex-direction: column;
+        gap: 60px 0;
+        padding: 30px;
+    }
+
+    .shorten-content {
+        width: 100%;
+        input {
+            padding: 20px 10px;
+        }
+    }
+}

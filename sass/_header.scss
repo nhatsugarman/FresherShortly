@@ -1,0 +1,48 @@
+.header {
+    padding-top: 50px;
+    padding-bottom: 60px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;    
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    &.shrink {
+        background-color: $cyan;
+
+    }
+
+    &-container {
+        @include flex(center, space-between);
+        gap: 40px;
+    }
+    &-logo {
+        color: $txt-dark-blue;
+    }
+    &-auth {
+        display: flex;
+        align-items: center;
+        gap: 0 30px;
+        text-transform: capitalize;
+    }
+    &-login {
+        font-weight: 500;
+        color: $heading-color;
+    }
+    &-signup {
+        padding: 13px 45px;
+        border-radius: 100rem;
+        color: $gray;
+        font-weight: 500;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .header {
+        padding: 25px 0 50px;
+    }
+    .header-auth {
+        display: none;
+    }
+}

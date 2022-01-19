@@ -1,0 +1,15 @@
+.boost {
+    &-container {
+        padding: 60px 0;
+        text-align: center;
+        background-image: url(../images/bg-boost-desktop.svg);
+        background-color: $dark-violet;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+    }
+    &-title {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+}
