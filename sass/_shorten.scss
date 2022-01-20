@@ -1,4 +1,5 @@
 .shorten {
+    transform: translateY(-50%);
     &-container {
         position: relative;
         background-image: url(../images/bg-shorten-desktop.svg);
@@ -42,83 +43,68 @@
             }
         }
     }
-    .shorten-list {
-        display: none;
-    }
+    // .shorten-list {
+    //     display: none;
+    // }
 
-    &.active {
-        margin-bottom: 250px;
+    &-list {
+        display: grid;
+        gap: 20px;
+    }
+    &-item {
+        @include flex(center, space-between);
+        background-color: #fff;
+        border-radius: 5px;
+        gap: 20px;
+        width: 100%;
+        height: 100%;
+        padding: 0 40px;
+        box-shadow: 10px 0px 10px 0px $cyan;
+
         @include tablet {
-            margin-bottom: 660px;
+            flex-direction: column;
+            gap: 0;
+            padding: 0 20px;
         }
-        .shorten-list {
-            position: absolute;
-            right: 0;
-            left: 0;
-            top: 120%;
-            display: grid;
-            gap: 20px;
-        }
-        .shorten-item {
-            @include flex(center, space-between);
-            background-color: #fff;
-            border-radius: 5px;
-            gap: 20px;
-            width: 100%;
-            height: 100%;
-            padding: 0 40px;
-            box-shadow: 10px 0px 10px 0px $cyan;
 
+        &__link {
+            color: $dark-violet;
+            padding: 28px 0;
             @include tablet {
-                flex-direction: column;
-                gap: 0;
-                padding: 0 20px;
-            }
-
-            &__link {
-                color: $dark-violet;
-                padding: 28px 0;
-                @include tablet {
-                    padding: 20px 0;
-                    text-align: start;
-                    width: 100%;
-                }
-            }
-            &__rep {
-                color: $cyan;
-                padding: 28px 0;
+                padding: 20px 0;
+                text-align: start;
                 width: 100%;
-                text-align: end;
-                @include tablet {
-                    text-align: start;
-                    border-top: 1px solid $gray;
-                }
-            }
-            &__copy {
-                color: #fff;
-                background-color: $cyan;
-                padding: 17px 48px;
-                border-radius: 5px;
-                text-align: center;
-                @include tablet {
-                    width: 100%;
-                    margin-bottom: 20px;
-                }
-                &:hover {
-                    opacity: 0.6;
-                    cursor: pointer;
-                }
-                &.copied {
-                    background-color: $txt-dark-violet;
-                    opacity: 1;
-                }
             }
         }
-    }
-}
-@media screen and (min-width: 1024px) {
-    .shorten {
-        transform: translateY(-50%);
+        &__rep {
+            color: $cyan;
+            padding: 28px 0;
+            width: 100%;
+            text-align: end;
+            @include tablet {
+                text-align: start;
+                border-top: 1px solid $gray;
+            }
+        }
+        &__copy {
+            color: #fff;
+            background-color: $cyan;
+            padding: 17px 48px;
+            border-radius: 5px;
+            text-align: center;
+            @include tablet {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            &:hover {
+                opacity: 0.6;
+                cursor: pointer;
+            }
+            &.copied {
+                background-color: $txt-dark-violet;
+                opacity: 1;
+            }
+        }
     }
 }
 
