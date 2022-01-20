@@ -358,7 +358,7 @@ main {
   }
 
   .hero {
-    padding-bottom: 50px;
+    padding-bottom: 150px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -380,6 +380,9 @@ main {
     max-width: 100%;
     text-align: center;
   }
+}
+.shorten {
+  transform: translateY(-50%);
 }
 .shorten-container {
   position: relative;
@@ -426,26 +429,11 @@ main {
   color: #f46262;
   font-style: italic;
 }
-.shorten .shorten-list {
-  display: none;
-}
-.shorten.active {
-  margin-bottom: 250px;
-}
-@media only screen and (max-width: 767px) {
-  .shorten.active {
-    margin-bottom: 660px;
-  }
-}
-.shorten.active .shorten-list {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 120%;
+.shorten-list {
   display: grid;
   gap: 20px;
 }
-.shorten.active .shorten-item {
+.shorten-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -458,36 +446,36 @@ main {
   box-shadow: 10px 0px 10px 0px #2acfcf;
 }
 @media only screen and (max-width: 767px) {
-  .shorten.active .shorten-item {
+  .shorten-item {
     flex-direction: column;
     gap: 0;
     padding: 0 20px;
   }
 }
-.shorten.active .shorten-item__link {
+.shorten-item__link {
   color: #3b3054;
   padding: 28px 0;
 }
 @media only screen and (max-width: 767px) {
-  .shorten.active .shorten-item__link {
+  .shorten-item__link {
     padding: 20px 0;
     text-align: start;
     width: 100%;
   }
 }
-.shorten.active .shorten-item__rep {
+.shorten-item__rep {
   color: #2acfcf;
   padding: 28px 0;
   width: 100%;
   text-align: end;
 }
 @media only screen and (max-width: 767px) {
-  .shorten.active .shorten-item__rep {
+  .shorten-item__rep {
     text-align: start;
     border-top: 1px solid #bfbfbf;
   }
 }
-.shorten.active .shorten-item__copy {
+.shorten-item__copy {
   color: #fff;
   background-color: #2acfcf;
   padding: 17px 48px;
@@ -495,25 +483,20 @@ main {
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  .shorten.active .shorten-item__copy {
+  .shorten-item__copy {
     width: 100%;
     margin-bottom: 20px;
   }
 }
-.shorten.active .shorten-item__copy:hover {
+.shorten-item__copy:hover {
   opacity: 0.6;
   cursor: pointer;
 }
-.shorten.active .shorten-item__copy.copied {
+.shorten-item__copy.copied {
   background-color: #232127;
   opacity: 1;
 }
 
-@media screen and (min-width: 1024px) {
-  .shorten {
-    transform: translateY(-50%);
-  }
-}
 @media screen and (max-width: 767px) {
   .shorten-container {
     flex-direction: column;
