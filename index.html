@@ -42,7 +42,7 @@
                         <li class="menu-item">
                             <a href="#" class="header-login">Login</a>
                             <a href="#" class="button button--primary">Sign up</a>
-                        </li>                    
+                        </li>
                     </ul>
                     <div class="menu-toggle">
                         <span></span><span></span><span></span>
@@ -76,29 +76,26 @@
         <main>
             <section class="shorten">
                 <div class="container">
-                    <div class="shorten-container">
+                    <form class="shorten-container">
                         <div class="shorten-content">
-                            <input type="text" placeholder="Shorten a link here...">
+                            <input type="url" class="url" name="url" placeholder="Shorten a link here..." pattern="https://.*">
                         </div>
-                        <a class="button button--primary button--outline shorten-button">Shorten it!</a>
-                        <ul class="shorten-list">
-                            <li class="shorten-item">
-                                <a href="#" class="shorten-item__link">https://www.frontendmentor.io/</a>
-                                <a href="#" class="shorten-item__rep">https://rel.ink/k4lKyk</a>
-                                <a class="shorten-item__copy">Copy</a>
-                            </li>
-                            <li class="shorten-item">
-                                <a href="#" class="shorten-item__link">https://www.frontendmentor.io/</a>
-                                <a href="#" class="shorten-item__rep">https://rel.ink/k4lKyk</a>
-                                <a class="shorten-item__copy">Copy</a>
-                            </li>
-                            <li class="shorten-item">
-                                <a href="#" class="shorten-item__link">https://www.frontendmentor.io/</a>
-                                <a href="#" class="shorten-item__rep">https://rel.ink/k4lKyk</a>
-                                <a class="shorten-item__copy">Copy</a>
-                            </li>
-                        </ul>
-                    </div>
+                        <button type="button" class="button button--primary button--outline shorten-button">Shorten
+                            it!</button>
+                    </form>                    
+                </div>
+            </section>
+
+            <section class="render">
+                <div class="container">
+                    <ul class="shorten-list">
+                        <!-- <li class="shorten-item">
+                            <a href="#" class="shorten-item__link">https://www.frontendmentor.io/</a>
+                            <a href="#" class="shorten-item__rep">https://rel.ink/k4lKyk</a>
+                            <a class="shorten-item__copy">Copy</a>
+                        </li> -->
+                       
+                    </ul>
                 </div>
             </section>
 
